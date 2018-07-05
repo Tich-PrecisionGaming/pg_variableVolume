@@ -8,6 +8,9 @@ This is a simple variable volume script GUI for the use in Arma 3, intended for 
   - You can alter each level of volume
   - Only works when the earplugs are inserted
 
+# Instructions:
+  - 7 - Volume Down
+  - 8 - Volume Up
 # Video:
 Variable Volume:
 [![IMAGE ALT TEXT](https://img.youtube.com/vi/AvLRwx6tqw0/0.jpg)](https://youtu.be/AvLRwx6tqw0 "Variable Volume")
@@ -42,6 +45,8 @@ Variable Volume:
 ``` 
 Make sure that there are no other mentions of the same case statements. You can make the keys anything that you like.
   - You may also append pg_volumeDialog.hpp to change the colour of the arrows or the bar
+  - If you use infistar, locate : "EXILE_AHAT_CONFIG.hpp", append : allowedIDDs[] ={8000};
+  
 # Final Notes:
 If you want to use this out of exile an extra snippet of code is included in the init.sqf.
 
