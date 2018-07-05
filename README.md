@@ -13,7 +13,7 @@ This is a simple variable volume script GUI for the use in Arma 3, intended for 
   - 8 - Volume Up
 # Video:
 Variable Volume:
-[![IMAGE ALT TEXT](https://img.youtube.com/vi/AvLRwx6tqw0/0.jpg)](https://youtu.be/AvLRwx6tqw0 "Variable Volume")
+[![IMAGE ALT TEXT](https://img.youtube.com/vi/cpUq78Et55M/0.jpg)](https://youtu.be/cpUq78Et55M "Variable Volume")
 
 # Installation:
   - Copy the "variableVoume" folder into your mission directory
