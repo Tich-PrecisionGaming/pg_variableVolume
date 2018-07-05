@@ -1,0 +1,6 @@
+#include "variableVolume\gui\pg_volumeDefines.hpp"
+
+class RscTitles
+{
+    #include "variableVolume\gui\pg_volumeDialog.hpp"
+};
