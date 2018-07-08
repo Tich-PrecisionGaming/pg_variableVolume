@@ -27,7 +27,7 @@ Variable Volume:
 			if (playerSound < 9) then{
 				playerSound = playerSound + 1;
 			};
-			call PGClient_fnc_earplugVolume;
+			true call variableVolume;
 		};
 		_stopPropagation = true;
     };
@@ -38,14 +38,36 @@ Variable Volume:
 			if (playerSound > 0) then{
 				playerSound = playerSound - 1;
 			};
-			call PGClient_fnc_earplugVolume;
+			true call variableVolume;
 		};
         _stopPropagation = true;
     };
 ``` 
+```
+case 0x06:
+	{
+		if (ExileClientIsInConstructionMode) then
+		{
+			ExileClientConstructionShowHint = !ExileClientConstructionShowHint;
+			[] call ExileClient_gui_constructionMode_update;
+		}
+		else 
+		{
+			call ExileClient_system_music_earplugs_toggle;
+			false call variableVolume;
+			
+		};
+		_stopPropagation = true;
+	};
+```
 Make sure that there are no other mentions of the same case statements. You can make the keys anything that you like.
   - You may also append pg_volumeDialog.hpp to change the colour of the arrows or the bar
   - If you use infistar, locate : "EXILE_AHAT_CONFIG.hpp", append : allowedIDDs[] ={8000};
+  - To use it with the infistar hotkeys just add this code:
+```
+["Variable Volume Up", 0, false, false, false, "if (playerSound < 9) then {playerSound = playerSound + 1;};true call variableVolume;", {true}],
+["Variable Volume Down", 0, false, false, false, "if (playerSound > 0) then {playerSound = playerSound - 1;};true call variableVolume;", {true}], 
+```
   
 # Final Notes:
 If you want to use this out of exile an extra snippet of code is included in the init.sqf.

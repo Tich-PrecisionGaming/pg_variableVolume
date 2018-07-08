@@ -4,7 +4,8 @@ This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 Int
 You may alter the code for personal use but with no redistribution without authorisation.
 created on: 05/07/2018.
 */
-
+private ["_useGUI"];
+_useGUI = _this;
 private _volumeIDC = [1210, 1209, 1208, 1207, 1206, 1205, 1204, 1203, 1202, 1201];
 if (alive player) then
 {
@@ -59,19 +60,21 @@ if (alive player) then
 
             };
 	};
-    disableSerialization;
-	20000 cutRsc ["pg_volumeDialog", "Plain", 0.5];
-	_display = (uiNamespace getVariable "pg_volumeDialog");
-	_display displayCtrl 1200 ctrlShow true;
-	_display displayCtrl 1211 ctrlShow true;
-	_count = 0;
-	while {_count < 10} do {
-	    _display displayCtrl (_volumeIDC select _count) ctrlShow false;
-	    _count = _count + 1;
-	};
-	_count = 0;
-	while {_count <= playerSound} do {
-	   _display displayCtrl (_volumeIDC select _count) ctrlShow true;
-	    _count = _count + 1;
+	if(_useGUI) then {
+        disableSerialization;
+        20000 cutRsc ["pg_volumeDialog", "Plain", 0.5];
+        _display = (uiNamespace getVariable "pg_volumeDialog");
+        _display displayCtrl 1200 ctrlShow true;
+        _display displayCtrl 1211 ctrlShow true;
+        _count = 0;
+        while {_count < 10} do {
+            _display displayCtrl (_volumeIDC select _count) ctrlShow false;
+            _count = _count + 1;
+        };
+        _count = 0;
+        while {_count <= playerSound} do {
+           _display displayCtrl (_volumeIDC select _count) ctrlShow true;
+            _count = _count + 1;
+        };
 	};
 };
